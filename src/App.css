@@ -1,38 +1,121 @@
-.App {
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f4e9dc;
   min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-bar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  border: none;
+  background: #ff6f61;
   color: white;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar button:hover {
+  background: #e05547;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.movie-card {
+  display: flex;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.movie-poster {
+  flex: 1.3; 
+  min-width: 300px;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.movie-details {
+  flex: 2;
+  text-align: left;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 200px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .movie-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .movie-details {
+    text-align: center;
+  }
+
+  .movie-poster {
+    min-width: 200px;
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    border-radius: 6px;
+    margin: 5px 0;
+  }
+
+  .movie-poster {
+    width: 90%;
+    min-width: unset;
+  }
+
+  .movie-details {
+    font-size: 14px;
   }
 }
