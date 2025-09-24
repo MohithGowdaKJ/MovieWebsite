@@ -22,7 +22,7 @@ function App() {
       } else {
         setMovie(null);
         setError("Movie not found!");
-        console.warn("⚠️ Movie not found:", title);
+        console.warn("Movie not found:", title);
       }
     } catch (err) {
       setError("Something went wrong!");
